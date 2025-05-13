@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Chat Home</title>
+</head>
+<body>
+    <h1>Welcome to the Video Chat App</h1>
+    <form method="get">
+        <label for="room">Enter room name:</label>
+        <input type="text" id="room" name="room" required>
+        <button type="submit">Join</button>
+    </form>
+
+    {% if request.GET.room %}
+        <script>
+            window.location.href = "/{{ request.GET.room }}/";
+        </script>
+    {% endif %}
+</body>
+</html>
